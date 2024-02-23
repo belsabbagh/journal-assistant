@@ -6,30 +6,50 @@
     meal: {
       prompt: "What meals did you have?",
       options: ["breakfast", "noon-snack", "lunch", "evening-snack", "dinner"],
+      type: "nested",
     },
     socializing: {
       prompt: "Who did you socialize with?",
       options: ["family", "friends", "strangers"],
+      type: "nested",
     },
     chores: {
       prompt: "Where did you do your chores?",
       options: ["kitchen", "living-room", "bedroom", "bathroom", "study-room"],
+      type: "nested",
     },
     music: {
       prompt: "What musical instruments did you play?",
       options: ["piano", "violin"],
+      type: "nested",
     },
     reading: {
       prompt: "What did you read?",
       options: ["non-fiction", "manhwa", "manga", "novel"],
+      type: "nested",
     },
     laundry: {
       prompt: "Did you do laundry?",
       options: ["lights", "darks"],
+      type: "nested",
     },
     "body-care": {
       prompt: "How did you take care of your body?",
       options: ["shower", "shave", "haircut"],
+      type: "nested",
+    },
+    exercise: {
+      prompt: "What exercise did you do?",
+      options: ["walking", "workout"],
+      type: "nested",
+    },
+    drawing: {
+      prompt: "Did you draw?",
+      type: "boolean",
+    },
+    writing: {
+      prompt: "Did you write?",
+      type: "boolean",
     },
   };
 
@@ -39,6 +59,12 @@
   function createActivities(data) {
     let done = [];
     for (const key in activities) {
+      if (activities[key].type === "boolean") {
+        if (data.has(key)) {
+          done.push(key);
+        }
+        continue;
+      }
       const flat = activities[key].options
         .filter((activity) => data.has(activity))
         .map((activity) => permalinkActivity(key, activity));
@@ -96,12 +122,19 @@
         {#each Object.keys(activities) as key}
           <h2>{activities[key].prompt}</h2>
           <div>
-            {#each activities[key].options as activity}
+            {#if activities[key].type === "nested"}
+              {#each activities[key].options as option}
+                <label>
+                  <input type="checkbox" name={option} />
+                  {option}
+                </label>
+              {/each}
+            {:else}
               <label>
-                <input type="checkbox" name={activity} />
-                {activity}
+                <input type="checkbox" name={key} />
+                Yes
               </label>
-            {/each}
+            {/if}
           </div>
         {/each}
         <button type="submit">Submit</button>
