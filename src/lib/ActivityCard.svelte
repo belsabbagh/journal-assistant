@@ -12,13 +12,13 @@
       {#each options as option}
         <label>
           <input type="checkbox" name={option} />
-          {option}
+          <span> {option}</span>
         </label>
       {/each}
     {:else}
       <label>
         <input type="checkbox" name={activitiesSet} />
-        Yes
+        <span>Yes</span>
       </label>
     {/if}
   </div>
@@ -43,10 +43,30 @@
 
   /* transparent checkbox */
   input[type="checkbox"] {
+    appearance: none;
+    display: none;
     background-color: transparent;
+    float: left;
+    line-height: 3em;
+    width: 8em;
+    height: 3em;
+    margin: 4px;
+    background-color: #104068;
+    border-radius: 4px;
+    border: 1px solid #fff;
+    overflow: hidden;
+  }
+
+  input[type="checkbox"] + span {
+    display: block;
+    line-height: 3em;
+    cursor: pointer;
+    text-align: center;
 
   }
-  input[type="checkbox"]:checked {
-    background-color: #E0AED0;
+
+  input[type="checkbox"]:checked + span {
+    background-color: #e0aed0;
+    border-radius: 1rem;
   }
 </style>
