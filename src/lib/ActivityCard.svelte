@@ -65,6 +65,10 @@
 
   }
 
+  input[type="checkbox"]:focus + span {
+    border: 1px solid #AC87C5;
+  }
+
   input[type="checkbox"]:checked + span {
     background-color: #e0aed0;
     border-radius: 1rem;
