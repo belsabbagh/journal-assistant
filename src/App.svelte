@@ -39,7 +39,7 @@
             />
           </div>
           <div>
-            <h2>How do you rate your day?</h2>
+            <h2>Rate your day! (1-7)</h2>
             <input
               type="number"
               name="rating"
@@ -85,11 +85,12 @@
   }
 
   pre {
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-primary);
     border-radius: 1rem;
     text-align: start;
     padding: 1rem;
     min-width: 300px;
+    min-height: 500px;
   }
   .activity-cards {
     display: flex;
@@ -100,7 +101,7 @@
 
   .custom-input {
     background-color: transparent;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-primary);
     border-radius: 1rem;
     padding: 0.5rem;
   }
@@ -108,5 +109,14 @@
   input[type="number"] {
     text-align: center;
     max-width: 3rem;
+    appearance: textfield;
+    
   }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+ 
 </style>

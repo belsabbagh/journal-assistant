@@ -29,16 +29,24 @@
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-primary);
     border-radius: 1rem;
     padding: 1rem;
   }
 
   .activity-card {
-
     margin: 0.75rem;
     min-width: 200px;
     max-width: 350px;
     text-align: start;
+  }
+
+  /* transparent checkbox */
+  input[type="checkbox"] {
+    background-color: transparent;
+
+  }
+  input[type="checkbox"]:checked {
+    background-color: #E0AED0;
   }
 </style>
