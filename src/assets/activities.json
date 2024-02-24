@@ -1,0 +1,50 @@
+{
+  "meal": {
+    "prompt": "What meals did you have?",
+    "options": ["breakfast", "noon-snack", "lunch", "evening-snack", "dinner"],
+    "type": "nested"
+  },
+  "socializing": {
+    "prompt": "Who did you socialize with?",
+    "options": ["family", "friends", "strangers"],
+    "type": "nested"
+  },
+  "chores": {
+    "prompt": "Where did you do your chores?",
+    "options": ["kitchen", "living-room", "bedroom", "bathroom", "study-room"],
+    "type": "nested"
+  },
+  "music": {
+    "prompt": "What musical instruments did you play?",
+    "options": ["piano", "violin"],
+    "type": "nested"
+  },
+  "reading": {
+    "prompt": "What did you read?",
+    "options": ["non-fiction", "manhwa", "manga", "novel"],
+    "type": "nested"
+  },
+  "laundry": {
+    "prompt": "Did you do laundry?",
+    "options": ["lights", "darks"],
+    "type": "nested"
+  },
+  "body-care": {
+    "prompt": "How did you take care of your body?",
+    "options": ["shower", "shave", "haircut", "nails"],
+    "type": "nested"
+  },
+  "exercise": {
+    "prompt": "What exercise did you do?",
+    "options": ["walking", "workout"],
+    "type": "nested"
+  },
+  "drawing": {
+    "prompt": "Did you draw?",
+    "type": "boolean"
+  },
+  "writing": {
+    "prompt": "Did you write?",
+    "type": "boolean"
+  }
+}
